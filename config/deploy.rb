@@ -5,7 +5,6 @@ set :application, "rails_app"
 set :repo_url, "git@github.com:nstung183/rails-capistrano-deployment.git"
 set :rbenv_type, :user
 set :rbenv_ruby, '3.1.0'
-set :rbenv_path, '~/.rbenv'
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
 
