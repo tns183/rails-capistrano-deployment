@@ -63,6 +63,7 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano3-puma', require: false
   gem 'capistrano-rbenv', require: false
+  gem 'capistrano-dotenv', require: false
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
 end
 
