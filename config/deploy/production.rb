@@ -7,8 +7,6 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 server '3.92.1.101', user: 'ubuntu', roles: %w{db web app}
-set :puma_workers, 2
-
 
 # role-based syntax
 # ==================
