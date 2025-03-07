@@ -45,7 +45,7 @@ workers 2
 # Min and Max threads per worker
 threads 1, 6
 
-shared_dir = File.expand_path("../../", __FILE__)
+shared_dir = "/home/ubuntu/my_app/shared"
 
 # Default to production
 rails_env = ENV['RAILS_ENV'] || "production"
