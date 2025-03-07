@@ -10,12 +10,27 @@ set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
 set :branch, :master
 set :deploy_to, '/home/ubuntu/my_app'
-set :linked_files, %w{config/.env}
+set :linked_files, %w{.env}
 set :keep_releases, 5
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'storage'
 append :linked_files, 'config/database.yml'
 
+set :puma_rackup, -> { File.join(current_path, "config.ru") }
+set :puma_state, -> { "#{shared_path}/tmp/pids/puma.state" }
+set :puma_pid, -> { "#{shared_path}/tmp/pids/puma.pid" }
+set :puma_bind, -> { "unix://#{shared_path}/tmp/sockets/puma.sock" }
+set :puma_conf, -> { "#{shared_path}/puma.rb" }
+set :puma_access_log, -> { "#{shared_path}/log/puma_access.log" }
+set :puma_error_log, -> { "#{shared_path}/log/puma_error.log" }
+set :puma_role, :app
+set :puma_env, fetch(:rack_env, fetch(:rails_env, "staging"))
+set :puma_threads, [0, 8]
+set :puma_workers, 0
+set :puma_worker_timeout, nil
+set :puma_init_active_record, true
+set :puma_preload_app, false
 
+set :tmp_dir, "/tmp/deploy-#{Time.now.to_f}"
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
 
