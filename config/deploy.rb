@@ -10,7 +10,6 @@ set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
 set :branch, :master
 set :deploy_to, '/home/ubuntu/my_app'
-set :linked_files, %w{.env}
 set :keep_releases, 5
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'storage'
 append :linked_files, 'config/database.yml'

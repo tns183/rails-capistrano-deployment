@@ -9,6 +9,7 @@
 server '3.92.1.101', user: 'ubuntu', roles: %w{db web app}
 set :stage, :production
 set :rails_env, "production"
+set :linked_files, %w{.env config/credentials/production.yml.enc}
 
 # role-based syntax
 # ==================
