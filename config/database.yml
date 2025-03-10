@@ -15,9 +15,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV["DATABASE_USERNAME"] %>
-  password: <%= ENV["DATABASE_PASSWORD"] %>
-  host: <%= ENV["DATABASE_HOST"] %>
+  username: <%= Rails.application.credentials.dig(:database, :user_name) %>
+  password: <%= Rails.application.credentials.dig(:database, :password) %>
+  host: <%= Rails.application.credentials.dig(:database, :host) %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
