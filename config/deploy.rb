@@ -6,8 +6,7 @@ set :repo_url, "git@github.com:nstung183/rails-capistrano-deployment.git"
 set :rbenv_type, :user
 set :rbenv_ruby, '3.1.0'
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
-
-
+set :use_sudo, false
 set :branch, :master
 set :linked_files, %w{.env config/credentials/production.key config/credentials/production.yml.enc}
 set :deploy_to, '/home/ubuntu/my_app'
