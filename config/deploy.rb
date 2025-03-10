@@ -25,10 +25,10 @@ set :puma_error_log, -> { "#{shared_path}/log/puma_error.log" }
 set :puma_role, :app
 set :puma_env, fetch(:rack_env, fetch(:rails_env, "production"))
 set :puma_threads, [1, 6]
-set :puma_workers, 2
+set :puma_workers, 1
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
-set :puma_preload_app, true 
+set :puma_preload_app, true
 
 
 set :tmp_dir, "/tmp/deploy-#{Time.now.to_f}"
