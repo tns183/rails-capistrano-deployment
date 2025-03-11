@@ -8,9 +8,9 @@ set :rbenv_ruby, '3.1.0'
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :use_sudo, false
 set :branch, :master
-set :linked_files, %w{.env config/credentials/production.key config/credentials/production.yml.enc}
 set :deploy_to, '/home/ubuntu/my_app'
 set :keep_releases, 5
+set :linked_files, %w{.env config/credentials/production.key config/credentials/production.yml.enc}
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'storage'
 append :linked_files, 'config/database.yml'
 
