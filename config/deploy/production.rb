@@ -6,7 +6,7 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-server '34.204.1.149', user: 'ubuntu', roles: %w{db web app}
+server '3.90.62.236', user: 'ubuntu', roles: %w{db web app}
 set :stage, :production
 set :rails_env, 'production'
 set :default_env, { 'RAILS_ENV' => 'production', 'RACK_ENV' => 'production' }
